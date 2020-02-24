@@ -1,0 +1,40 @@
+#titulo {
+    text-align: center;
+    font-size: 30px;
+}
+form#filter {
+    background-color: white; 
+    list-style-type: none;
+    text-align: left;
+    margin-top: 40px;
+    padding: 0;
+}
+form#filter .campo {
+    display: inline-block;
+    font-size: 12px;
+    margin: 5px;
+    padding: 5px;
+}
+label.label {
+    font-weight: bold;
+}
+thead#header {
+    background-color:#e6e7e8;
+}
+tbody tr:nth-child(even) {
+    background-color: #e6e7e8;
+}
+tbody tr:nth-child(odd) {
+    background-color: #FFF;
+}
+#navigate .nav{
+    display: inline-block;
+    margin: 5px;
+}
+body a {
+    text-decoration: none;
+    font-weight:bold;
+}
+body a:link {
+    color:blue;
+}
