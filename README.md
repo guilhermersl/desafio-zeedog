@@ -43,6 +43,7 @@ A aplicação usa JS para reconhecer as ações do usuário, como aplicar filtro
 ### Instalação
 
 1. Baixe o conteúdo do repositório 'desafio-zeedog' do GitHub (https://github.com/guilhermersl/desafio-zeedog.git)
+2. Descompacte o arquivo baixado, localize-o no local acessível pela Web. Suponha que a localização seja / var / www / desafio-zeedog.
 
 
 ### Heroku
