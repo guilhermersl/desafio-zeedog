@@ -1,16 +1,14 @@
 <?php
-//define("BASE_URL", "http://localhost/projetos/desafiozeedog/"); 	
-
 $param = array(
-    "buscaLivre"    => $_POST['buscaLivre'],
-    "linguagem"     => $_POST['linguagem'],
-    "usuario"       => $_POST['usuario'],
-    "pagina"        => $_POST['currentPage'],
+    "searchFree"    => $_POST['searchFree'],
+    "lang"          => $_POST['lang'],
+    "user"          => $_POST['user'],
+    "page"          => $_POST['currentPage'],
     "sort"          => $_POST['sort'],
     "order"         => $_POST['order']
 );
 
-//CHAMA CONTROLLER QUE REALIZAR? A REQUISI??O PARA A CARGA INICIAL
+//CHAMA CONTROLLER QUE REALIZARÁ A REQUISIÇÃO PARA A CARGA INICIAL
 require 'controller.php';
 require 'apigithub.php';
 $api = new APIGitHub();

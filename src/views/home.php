@@ -1,6 +1,6 @@
 <html>
 	<head>
-		<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+		<meta http-equiv="content-type" content="text/html;charset=utf-8" />
 		<title>Desafio Zee Dog</title>
 		<!-- SCRIPTS JS -->		
 		<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"/>
@@ -20,13 +20,13 @@
 		<div id="subtitulo">Lista de Repositórios do GitHub</div>
 		<form id="filter" method="POST">
 		    <span class="campo">
-				<label class="label">Procure por: </label><input type="text" name="buscaLivre" id="buscaLivre" />
+				<label class="label">Procure por: </label><input type="text" name="searchFree" id="searchFree" />
 			</span>
 			<span class="campo">
-				<label class="label">Linguagem: </label><input type="text" name="linguagem" value="ruby" id="linguagem"/>
+				<label class="label">Linguagem: </label><input type="text" name="lang" value="ruby" id="lang"/>
 			</span>
 			<span class="campo">
-				<label class="label">Usuário: </label><input type="text" name="usuario" id="usuario"/>
+				<label class="label">Usuário: </label><input type="text" name="user" id="user"/>
 			</span>
 			<span class="campo">
 				<input type="submit" value="Filtrar" id="enviar">
@@ -53,7 +53,7 @@
 					</th>						
 				</tr>            
 				</thead>
-				<!-- CARREGA AQUI A VIEW CONTENDO AS LINHAS COM A LISTA DE DIRET?RIOS-->
+				<!-- CARREGA AQUI A VIEW CONTENDO AS LINHAS COM A LISTA DE DIRETÓRIOS-->
 				<tbody id="Repositorios">
 				<?php require './src/views/repositorios.php'; ?>				
 				</tbody>
@@ -70,15 +70,17 @@
 </html>
 
 <script>
+	//DÁ UM PREVENTDEFAULT PARA EVITAR O SUBMIT DO FORM, POIS USAREMOS O AJAX
 	$("form").submit(function(e) {
 			e.preventDefault();
 			e.stopPropagation();
 	});
 
+	//FAZ A REQUISIÇÃO VIA AJAX AO PHP, PASSANDO OS PARÂMETROS PARA FILTRO
 	$("a#preview, a#next, #enviar, a.sort").bind('click', function(e){
-		var buscaLivre 		= $('#buscaLivre').val();
-		var linguagem 		= $('#linguagem').val();
-		var usuario 		= $('#usuario').val();
+		var searchFree 		= $('#searchFree').val();
+		var lang 			= $('#lang').val();
+		var user 			= $('#user').val();
 		var currentPage		= $('#currentPage').html();
 		var sort='';
 		var order='';
@@ -98,11 +100,11 @@
 			currentPage++;
 		}
 		
-		
+		//FAZ A REQUISIÇÃO DE FATO!
 		$.post("./src/search.php", { 
-															buscaLivre	 	: buscaLivre,
-															linguagem 		: linguagem,
-															usuario 		: usuario,
+															searchFree	 	: searchFree,
+															lang 			: lang,
+															user 			: user,
 															currentPage 	: currentPage,
 															sort 			: sort,
 															order			: order

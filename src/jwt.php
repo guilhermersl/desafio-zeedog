@@ -1,4 +1,5 @@
 <?php
+//CLASSE QUE CRIA TOKEN JWT PARA A AUTENTICAÇÃO JUNTO AO SERVIDOR
 class JWT {
 
 	private $secret;

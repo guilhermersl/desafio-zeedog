@@ -1,10 +1,10 @@
 <?php
 require 'jwt.php';
 
-//IMPLEMENTAÇÃO DA INTERFACE PARA CONSUMIR API GITHUB
+//IMPLEMENTAÃ‡ÃƒO DA INTERFACE PARA CONSUMIR API GITHUB
 class APIGitHub implements API {    
 
-    //BUSCA OS REPOSITÓRIO DO GITHUB
+    //BUSCA OS REPOSITÃ“RIO DO GITHUB
     public function doRequest($uri, $method, $token, $user_agent) {
         $curl = curl_init();
         curl_setopt($curl, CURLOPT_URL, $uri);
@@ -18,41 +18,40 @@ class APIGitHub implements API {
         curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, false);        
         $ret = json_decode(curl_exec($curl));
 
-        //VERIFICA SE HOUVE ALGUM ERRO AO FAZER A REQUISIÇÃO
+        //VERIFICA SE HOUVE ALGUM ERRO AO FAZER A REQUISIÃ‡ÃƒO
         if (curl_errno($curl)) {
-            echo 'Erro ao buscar os repositórios: ' . curl_error($curl);
+            echo 'Erro ao buscar os repositÃ³rios: ' . curl_error($curl);
+            return false;
         }        
-        //VERIFICA SE HOUVE ALGUM ERRO AO FAZER A REQUISIÇÃO        
-
 
         curl_close($curl); 
         
         return $ret;
     }    
 
-    //ENDPOINT DE REPOSITÓRIOS: "https://api.github.com/search/repositories"
+    //ENDPOINT DE REPOSITÃ“RIOS: "https://api.github.com/search/repositories"
     public function getRepositories($param = array()){  
         $dados = array();
 
-		$param['buscaLivre'] = (isset($param['buscaLivre']) && !empty($param['buscaLivre']))	? $param['buscaLivre']   : '';
-		$param['linguagem']  = (isset($param['linguagem']) 	&& !empty($param['linguagem'])) 	? $param['linguagem']    : 'ruby';
-		$param['usuario'] 	 = (isset($param['usuario']) 	&& !empty($param['usuario'])) 		? $param['usuario']      : '';
-		$param['pagina'] 	 = (isset($param['pagina']) 	&& !empty($param['pagina']))		? $param['pagina']       : '1';
-		$param['sort'] 		 = (isset($param['sort']) 		&& !empty($param['sort']))			? $param['sort']         : 'stars';		
-		$param['order'] 	 = (isset($param['order'])	 	&& !empty($param['order'])) 		? $param['order']        : 'desc';
+		$param['searchFree']    = (isset($param['searchFree'])  &&  !empty($param['searchFree']))   ?   $param['searchFree']  : '';
+		$param['lang']          = (isset($param['lang']) 	    &&  !empty($param['lang'])) 	    ?   $param['lang']        : 'ruby';
+		$param['user']          = (isset($param['user']) 	    &&  !empty($param['user'])) 		?   $param['user']        : '';
+		$param['page'] 	        = (isset($param['page']) 	    &&  !empty($param['page']))		    ?   $param['page']        : '1';
+		$param['sort'] 		    = (isset($param['sort']) 		&&  !empty($param['sort']))			?   $param['sort']        : 'stars';		
+		$param['order'] 	    = (isset($param['order'])	 	&&  !empty($param['order'])) 		?   $param['order']       : 'desc';
 
-		$uri 	= "https://api.github.com/search/repositories?q=".$param['buscaLivre']."+in:name,full_name,description".
-				  "+language:".$param['linguagem']."+user:".$param['usuario'].
-				  "&page=".$param['pagina']."&per_page=100".
+		$uri 	= "https://api.github.com/search/repositories?q=".$param['searchFree']."+in:name,full_name,description".
+				  "+language:".$param['lang']."+user:".$param['user'].
+				  "&page=".$param['page']."&per_page=100".
 				  "&sort=".$param['sort'].
                   "&order=".$param['order'];
 
-        //GERAÇÃO DA AUTENTICÃO JWT
+        //GERAÃ‡ÃƒO DA AUTENTICÃƒO JWT
         $jwt        = new JWT();
         $token_jwt  = $jwt->create(array("id_user"=>"guilhermersl", "nome"=>"DesafioZeeDog"));
         $user_agent = "guilhermersl"; 
 
-        //FAZ A REQUISIÇÃO DE FATO!
+        //FAZ A REQUISIÃ‡ÃƒO DE FATO!
         $lista 	= $this->doRequest($uri,"GET", $token_jwt, $user_agent);
 
         //MONTA RETORNO
