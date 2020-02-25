@@ -1,6 +1,7 @@
 ### DESAFIO ZEE DOG ###
 
 Aplicação de busca de repositórios do GitHub.
+
 Versão: 1.0
 
 ### Descrição
@@ -32,4 +33,4 @@ A aplicação usa JS para reconhecer as ações do usuário, como aplicar filtro
 
 ### Heroku
 
-url = http://desafio-zeedog.herokuapp.com/
+URL = http://desafio-zeedog.herokuapp.com/
