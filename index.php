@@ -4,7 +4,7 @@
 
 	require '/src/controller.php';
 	require '/src/apigithub.php';
-	echo "até aqui ok"
+	echo "até aqui ok";
 	/*
 	//CHAMA CONTROLLER QUE REALIZARÁ A REQUISIÇÃO PARA A CARGA INICIAL
 	$api = new APIGitHub();
