@@ -2,7 +2,8 @@
 
 Aplicação de busca de repositórios do GitHub.
 
-Versão: 1.0
+[![Version](v1.0)
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](http://desafio-zeedog.herokuapp.com/)
 
 
 ### Descrição
