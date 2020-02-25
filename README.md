@@ -1,9 +1,9 @@
 # DESAFIO ZEE DOG
 
-Aplicação de busca de repositórios do GitHub.
-
-[![Version](v1.0)
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](http://desafio-zeedog.herokuapp.com/)
+
+
+Aplicação de busca de repositórios do GitHub.
 
 
 ### Descrição
