@@ -1,5 +1,5 @@
 <?php
-define("BASE_URL", "http://localhost/projetos/desafiozeedog/"); 	
+//define("BASE_URL", "http://localhost/projetos/desafiozeedog/"); 	
 
 $param = array(
     "buscaLivre"    => $_POST['buscaLivre'],
@@ -11,14 +11,14 @@ $param = array(
 );
 
 //CHAMA CONTROLLER QUE REALIZAR? A REQUISI??O PARA A CARGA INICIAL
-require '/controller.php';
-require '/apigithub.php';
+require 'controller.php';
+require 'apigithub.php';
 $api = new APIGitHub();
 $controller = new Controller($api);
 $dados = $controller->run($param);
 $_POST = array();
 
 extract($dados);
-require_once( '/views/repositorios.php');
+require_once( 'views/repositorios.php');
 
 ?>
