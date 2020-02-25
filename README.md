@@ -11,9 +11,9 @@ Aplicação de busca de repositórios do GitHub.
 Esta aplicação realiza consulta dos repositórios do GitHub, por meio de requisições aos endpoints da API em "https://developer.github.com/v3/".
 
 Atualmente, a aplicação permite:
-*   Listar dados dos repositorios: Nome completo, descrição, quantidade de estrelas, quantidade de forks, autor e data da última atualização
-*   realizar buscar por meio de termo livre, por linguagem específica (tendo como padrão a linguagem ruby)
-*   realizar a ordenação por quantidade de estrelas, por forks ou data da última atualização
+*   Listar dados dos repositorios: Nome completo, descrição, quantidade de estrelas, quantidade de forks, autor e data da última atualização.
+*   realizar buscar por meio de termo livre, por linguagem específica (tendo como padrão a linguagem ruby).
+*   realizar a ordenação por quantidade de estrelas, por forks ou data da última atualização.
 
 ### EndPoint
 A aplicação realiza consulta ao endpoint https://api.github.com/search/repositories
