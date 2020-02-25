@@ -1,17 +1,18 @@
 <?php
+require 'jwt.php';
 
 //IMPLEMENTAÇÃO DA INTERFACE PARA CONSUMIR API GITHUB
 class APIGitHub implements API {    
 
     //BUSCA OS REPOSITÓRIO DO GITHUB
-    public function doRequest($uri, $method) {        
+    public function doRequest($uri, $method, $token, $user_agent) {
         $curl = curl_init();
         curl_setopt($curl, CURLOPT_URL, $uri);
         curl_setopt($curl, CURLOPT_CUSTOMREQUEST, $method);
-        curl_setopt($curl, CURLOPT_USERAGENT, USER_AGENT);
+        curl_setopt($curl, CURLOPT_USERAGENT, $user_agent);
         curl_setopt($curl, CURLOPT_HTTPHEADER, array(
             'Accept: application/vnd.github.v3+json',
-            'Authorization: Bearer'. MY_JWT
+            'Authorization: Bearer'. $token
         ));
         curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
         curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, false);        
@@ -21,6 +22,8 @@ class APIGitHub implements API {
         if (curl_errno($curl)) {
             echo 'Erro ao buscar os repositórios: ' . curl_error($curl);
         }        
+        //VERIFICA SE HOUVE ALGUM ERRO AO FAZER A REQUISIÇÃO        
+
 
         curl_close($curl); 
         
@@ -44,8 +47,13 @@ class APIGitHub implements API {
 				  "&sort=".$param['sort'].
                   "&order=".$param['order'];
 
+        //GERAÇÃO DA AUTENTICÃO JWT
+        $jwt        = new JWT();
+        $token_jwt  = $jwt->create(array("id_user"=>"guilhermersl", "nome"=>"DesafioZeeDog"));
+        $user_agent = "guilhermersl"; 
+
         //FAZ A REQUISIÇÃO DE FATO!
-        $lista 	= $this->doRequest($uri,"GET");
+        $lista 	= $this->doRequest($uri,"GET", $token_jwt, $user_agent);
 
         //MONTA RETORNO
 		if ( $lista->total_count > 0 ) {

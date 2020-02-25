@@ -1,13 +1,6 @@
 <?php
 require 'interfaceapi.php';
 
-//GERAÇÃO DA AUTENTICÃO JWT
-require 'jwt.php';	
-$jwt = new JWT();
-$token = $jwt->create(array("id_user"=>"guilhermersl", "nome"=>"DesafioZeeDog"));
-define("MY_JWT", $token);
-define("USER_AGENT", "guilhermersl");
-
 class Controller {
 	private $api;
 

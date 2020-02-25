@@ -1,5 +1,6 @@
 <html>
 	<head>
+		<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
 		<title>Desafio Zee Dog</title>
 		<!-- SCRIPTS JS -->		
 		<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"/>
@@ -35,7 +36,7 @@
 				<thead id="header">
 				<tr>
 					<th>Nome</th>
-					<th>Descriçãoo</th>
+					<th>Descrição</th>
 					<th>Estrelas </br>
 						<a class="sort"  sort="stars" order="asc"  href="javascript://"><i class="fas fa-angle-down"></i></a>&nbsp;
 						<a class="sort"  sort="stars" order="desc" href=""><i class="fas fa-angle-up"></i></a></th>

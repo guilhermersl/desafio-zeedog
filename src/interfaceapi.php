@@ -2,6 +2,6 @@
 
 //INTERFACE API
 interface API {
-    public function doRequest($uri, $method);
+    public function doRequest($uri, $method, $token, $user_agent);
 
 }
