@@ -4,11 +4,11 @@
 		<!-- SCRIPTS JS -->		
 		<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"/>
 		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
-		<script type="text/javascript" src="<?php echo BASE_URL; ?>assets/js/jquery-3.4.1.min.js"></script>		
-		<script type="text/javascript" src="<?php echo BASE_URL; ?>assets/js/script.js"></script>		
+		<script type="text/javascript" src="./assets/js/jquery-3.4.1.min.js"></script>		
+		<script type="text/javascript" src="./assets/js/script.js"></script>		
 				
 		<!-- ESTILO CSS -->		
-		<link rel="stylesheet" type="text/css" href="<?php echo BASE_URL; ?>assets/css/style.css" />
+		<link rel="stylesheet" type="text/css" href="./assets/css/style.css" />
 
 		<!--DataTable-->
 		<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.css">
@@ -101,7 +101,7 @@
 		}
 		
 		
-		$.post( '<?php echo BASE_URL_SRC."search.php"?>', { 
+		$.post("./src/search.php", { 
 															buscaLivre	 	: buscaLivre,
 															linguagem 		: linguagem,
 															usuario 		: usuario,
