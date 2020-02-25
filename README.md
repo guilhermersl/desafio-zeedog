@@ -14,6 +14,21 @@ Atualmente, a aplicação permite:
 *   realizar buscar por meio de termo livre, por linguagem específica (tendo como padrão a linguagem ruby)
 *   realizar a ordenação por quantidade de estrelas, por forks ou data da última atualização
 
+# EndPoint
+A aplicação realiza consulta ao endpoint https://api.github.com/search/repositories
+
+*   Ao carregar o site, a requisição é feita ao endpoint acima, sem passagem de parâmetros, permitindo, assim, buscar todos os repositórios
+*   Ao aplicar um filtro ou realizar ordenação, a requisição é feita ao endpoint acima, porém aplicando os devidos parâmetros de filtragem/ordenação. 
+      
+      Ex: https://api.github.com/search/repositories?q=".$param['searchFree']."+in:name,full_name,description".
+				  "+language:".$param['lang']."+user:".$param['user'].
+				  "&page=".$param['page']."&per_page=100".
+				  "&sort=".$param['sort'].
+          "&order=".$param['order'];
+
+### PHP
+A aplicação foi desenvolvida usando a linguagem PHP, por meio do paradigma orientado a objetos, com interfaces e classes para realizar as requisições à API GitHub.
+
 
 ### CSS
 
