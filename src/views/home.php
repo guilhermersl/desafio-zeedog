@@ -9,10 +9,6 @@
 				
 		<!-- ESTILO CSS -->		
 		<link rel="stylesheet" type="text/css" href="./assets/css/style.css" />
-
-		<!--DataTable-->
-		<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.css">
-		<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.js"></script>
 	</head>
 		
 	<body id="corpo" class="w3-margin">
@@ -28,7 +24,7 @@
 				<label class="label">Linguagem: </label><input type="text" name="linguagem" value="ruby" id="linguagem"/>
 			</span>
 			<span class="campo">
-				<label class="label">Usuário: </label><input type="text" name="usuario" id="usuario"/>
+				<label class="label">UsuÃ¡rio: </label><input type="text" name="usuario" id="usuario"/>
 			</span>
 			<span class="campo">
 				<input type="submit" value="Filtrar" id="enviar">
@@ -39,7 +35,7 @@
 				<thead id="header">
 				<tr>
 					<th>Nome</th>
-					<th>Descrição</th>
+					<th>DescriÃ§Ã£oo</th>
 					<th>Estrelas </br>
 						<a class="sort"  sort="stars" order="asc"  href="javascript://"><i class="fas fa-angle-down"></i></a>&nbsp;
 						<a class="sort"  sort="stars" order="desc" href=""><i class="fas fa-angle-up"></i></a></th>
@@ -49,7 +45,7 @@
 						<a class="sort"  sort="forks" order="desc" href=""><i class="fas fa-angle-up"></i></a></th>
 					</th>
 					<th>Autor</th>						
-					<th>Última atualização
+					<th>Ãšltima atualizaÃ§Ã£o
 						<a class="sort"  sort="updated" order="asc"  href=""><i class="fas fa-angle-down"></i></a>&nbsp;
 						<a class="sort"  sort="updated" order="desc" href=""><i class="fas fa-angle-up"></i></a></th>
 					</th>						
