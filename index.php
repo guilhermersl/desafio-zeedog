@@ -1,6 +1,6 @@
 <?php  
-	define("BASE_URL", "http://localhost/projetos/desafiozeedog/"); 
-	define("BASE_URL_SRC", "http://localhost/projetos/desafiozeedog/src/");
+	//define("BASE_URL", "http://localhost/projetos/desafiozeedog/"); 
+	//define("BASE_URL_SRC", "http://localhost/projetos/desafiozeedog/src/");
 
 	require '/src/controller.php';
 	require '/src/apigithub.php';
