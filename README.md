@@ -18,8 +18,8 @@ Atualmente, a aplicação permite:
 ### EndPoint
 A aplicação realiza consulta ao endpoint https://api.github.com/search/repositories
 
-*   Ao carregar o site, a requisição é feita ao endpoint acima, sem passagem de parâmetros, permitindo, assim, buscar todos os repositórios
-*   Ao aplicar um filtro ou realizar ordenação, a requisição é feita ao endpoint acima, porém aplicando os devidos parâmetros de filtragem/ordenação. 
+*   Ao carregar o site, a requisição é feita ao endpoint acima, sem passagem de parâmetros, permitindo, assim, buscar todos os repositórios.
+*   Ao aplicar um filtro ou realizar ordenação, a requisição é feita ao endpoint acima dinamicamente, aplicando os devidos parâmetros de filtragem/ordenação.
       
       Ex: https://api.github.com/search/repositories?q=".$param['searchFree']."+in:name,full_name,description".
 				  "+language:".$param['lang']."+user:".$param['user'].
@@ -44,7 +44,7 @@ A aplicação usa JS para reconhecer as ações do usuário, como aplicar filtro
 ### Instalação
 
 1. Baixe o conteúdo do repositório 'desafio-zeedog' do GitHub (https://github.com/guilhermersl/desafio-zeedog.git)
-2. Descompacte o arquivo baixado, localize-o no local acessível pela Web. Suponha que a localização seja / var / www / desafio-zeedog.
+2. Descompacte o arquivo baixado, localize-o no local acessível pela Web. Suponha que a localização seja /var/www/desafio-zeedog, ou /wamp/www/desafio-zeedog, por exemplo.
 
 
 ### Heroku
