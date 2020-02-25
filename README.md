@@ -5,7 +5,7 @@ Aplicação de busca de repositórios do GitHub.
 Versão: 1.0
 
 
-## Descrição
+### Descrição
 
 Esta aplicação realiza consulta dos repositórios do GitHub, por meio de requisições aos endpoints da API em "https://developer.github.com/v3/".
 
@@ -26,21 +26,21 @@ A aplicação realiza consulta ao endpoint https://api.github.com/search/reposit
 				  "&sort=".$param['sort'].
           			  "&order=".$param['order'];
 
-## PHP
+### PHP
 A aplicação foi desenvolvida usando a linguagem PHP, por meio do paradigma orientado a objetos, com interfaces e classes para realizar as requisições à API GitHub.
 
 
-## CSS
+### CSS
 
 A aplicação usa CSS para definir o layout da página.
 
 
-## JavaScript e jQuery
+### JavaScript e jQuery
 
 A aplicação usa JS para reconhecer as ações do usuário, como aplicar filtro e ordenar repositórios.
 
 
-## Instalação
+### Instalação
 
 1. Baixe o conteúdo do repositório 'desafio-zeedog' do GitHub (https://github.com/guilhermersl/desafio-zeedog.git)
 
