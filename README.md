@@ -1,9 +1,10 @@
-=== DESAFIO ZEE DOG ===
-Contributors: seinoxygen,moabi
+### DESAFIO ZEE DOG ###
+
 Aplicação de busca de repositórios do GitHub.
 Versão: 1.0
 
-== Descrição ==
+### Descrição
+
 Esta aplicação realiza consulta dos repositórios do GitHub, por meio de requisições aos endpoints da API em "https://developer.github.com/v3/".
 
 Atualmente, a aplicação permite:
@@ -24,11 +25,11 @@ A aplicação usa JS para reconhecer as ações do usuário, como aplicar filtro
 A aplicação usa JS para reconhecer as ações do usuário, como aplicar filtro e ordenar repositórios.
 
 
-== Installation ==
+### Installation
 
 1. Baixe o conteúdo do repositório 'desafio-zeedog' do GitHub (https://github.com/guilhermersl/desafio-zeedog.git)
 
 
-== Heroku ==
+### Heroku
 
 url = http://desafio-zeedog.herokuapp.com/
