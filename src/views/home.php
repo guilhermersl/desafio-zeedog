@@ -95,9 +95,10 @@
 		//NAVIGATE
 		if ( e['target']['id'] == 'preview') {
 			currentPage--;
-		} 
-		if ( e['target']['id'] == 'next') {
+		} else if ( e['target']['id'] == 'next') {
 			currentPage++;
+		} else{
+			currentPage = 1;
 		}
 		
 		//FAZ A REQUISIÇÃO DE FATO!
@@ -109,14 +110,20 @@
 															sort 			: sort,
 															order			: order
 												} , function(data, status) {															
-
+			//MONTA TABELA COM LISTA DE REPOSITÓRIOS													
 			$('tbody#Repositorios').html(data);
-
+			//SETA PÁGINA ATUAL
 			$('#currentPage').html(currentPage);
+			//SHOW/HIDE DA NEVEGAÇÃO DE PÁGINAS
 			if ( $('#currentPage').html() <= 1){
 				$('#preview').hide(true);
 			}else{
 				$('#preview').show(true);
+			}
+			if ( $('tr.linhaDados').length == 0 ){
+				$('#next').hide(true);
+			}else{
+				$('#next').show(true);
 			}
 		});			    
 	});
