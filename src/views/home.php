@@ -38,6 +38,7 @@
 				<tr>
 					<th>Nome</th>
 					<th>Descrição</th>
+					<th>Autor</th>					
 					<th>Estrelas </br>
 						<a class="sort"  sort="stars" order="asc"  href="javascript://"><i class="fas fa-angle-down"></i></a>&nbsp;
 						<a class="sort"  sort="stars" order="desc" href=""><i class="fas fa-angle-up"></i></a></th>
@@ -45,8 +46,7 @@
 					<th>Forks </br>
 						<a class="sort"  sort="forks" order="asc"  href=""><i class="fas fa-angle-down"></i></a>&nbsp;
 						<a class="sort"  sort="forks" order="desc" href=""><i class="fas fa-angle-up"></i></a></th>
-					</th>
-					<th>Autor</th>						
+					</th>						
 					<th>Última atualização
 						<a class="sort"  sort="updated" order="asc"  href=""><i class="fas fa-angle-down"></i></a>&nbsp;
 						<a class="sort"  sort="updated" order="desc" href=""><i class="fas fa-angle-up"></i></a></th>
